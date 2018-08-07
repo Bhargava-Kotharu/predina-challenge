@@ -11,7 +11,10 @@ import org.springframework.util.ResourceUtils;
 
 import com.predina.app.service.FileService;
 
+import static com.predina.app.constants.Constants.*;
+
 /**
+ * File Service for reading files from classpath
  * 
  * Created By @author Bhargava Kotharu on 03 August, 2018
  *
@@ -19,26 +22,30 @@ import com.predina.app.service.FileService;
 @Service
 public class FileServiceImpl implements FileService {
 
+    /** {@inheritDoc} */
     @Override
     public File readCoordinatesAsFile() throws IOException {
-	return ResourceUtils.getFile("classpath:data/coordinates.csv");
+	return ResourceUtils.getFile(CLASSPATH_KEY + COORDINATES_FILE_PATH);
     }
 
+    /** {@inheritDoc} */
     @Override
     public File readLocationsAsFile() throws IOException {
-	return ResourceUtils.getFile("classpath:data/realtimelocation.csv");
+	return ResourceUtils.getFile(CLASSPATH_KEY + VEHICLE_LOCATIONS_FILE_PATH);
     }
 
+    /** {@inheritDoc} */
     @Override
     public BufferedReader readCoordinates() throws IOException {
-	InputStream inputStream = getClass().getResourceAsStream("/data/coordinates.csv");
+	InputStream inputStream = getClass().getResourceAsStream(COORDINATES_FILE_PATH);
 	BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
 	return reader;
     }
 
+    /** {@inheritDoc} */
     @Override
     public BufferedReader readLocations() throws IOException {
-	InputStream inputStream = getClass().getResourceAsStream("/data/realtimelocation.csv");
+	InputStream inputStream = getClass().getResourceAsStream(VEHICLE_LOCATIONS_FILE_PATH);
 	BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
 	return reader;
     }

@@ -35,6 +35,7 @@ public class VehiclesLocationServiceImpl implements VehiclesLocationService {
     @Autowired
     private FileService fileService;
 
+    /** {@inheritDoc} */
     @Override
     public List<VehicleLocation> getVehiclesLocation() throws IOException {
 	List<VehicleLocation> inputList = new ArrayList<VehicleLocation>();
@@ -49,6 +50,7 @@ public class VehiclesLocationServiceImpl implements VehiclesLocationService {
 	return inputList;
     }
 
+    /** {@inheritDoc} */
     @Override
     public List<VehicleLocation> getVehiclesLocationByTime(String time) throws IOException {
 	List<VehicleLocation> inputList = new ArrayList<VehicleLocation>();
@@ -64,6 +66,7 @@ public class VehiclesLocationServiceImpl implements VehiclesLocationService {
 	return inputList;
     }
 
+    /** {@inheritDoc} */
     @Override
     public List<VehicleLocation> getVehiclesLocationByVehicle(String time) throws IOException {
 	return this.getVehiclesLocation().stream().filter(t -> t.getVehicle().equalsIgnoreCase(time))
@@ -71,12 +74,15 @@ public class VehiclesLocationServiceImpl implements VehiclesLocationService {
     }
 
     /**
-     * Common method to parse csv file to return vehicle locations
+     * Common method to parse csv file to return vehicle locations.
+     * 
+     * <b>Performance of this method is not as good as BufferedReader option.</b>
      * 
      * @return CsvToBean<VehicleLocation>
      * @throws FileNotFoundException
      * @throws IOException
      */
+    @SuppressWarnings("unused")
     private CsvToBean<VehicleLocation> getVechileLocations() throws FileNotFoundException, IOException {
 	CSVReader csvReader = new CSVReader(fileService.readLocations());
 	HeaderColumnNameMappingStrategy<VehicleLocation> mappingStrategy = new HeaderColumnNameMappingStrategy<>();

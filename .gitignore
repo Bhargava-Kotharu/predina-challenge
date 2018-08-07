@@ -14,8 +14,7 @@ target
 .classpath
 .project
 .settings/*
+.DS_Store
 */.settings/*
-webs-pri-offer-switch-utility/.settings/
-webs-pri-offer-swtich-utility/target/
 .springbeans
 ${sys:log_dir}

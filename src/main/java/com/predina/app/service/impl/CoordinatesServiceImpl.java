@@ -24,6 +24,7 @@ public class CoordinatesServiceImpl implements CoordinatesService {
     @Autowired
     private FileService fileService;
 
+    /** {@inheritDoc} */
     @Override
     public List<Coordinate> getCoordinates() throws IOException {
 	CSVReader csvReader = new CSVReader(fileService.readCoordinates());
