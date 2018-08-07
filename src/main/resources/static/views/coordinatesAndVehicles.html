@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Coordinates & Vehicles - Task 3</title>
+<style>
+#map {
+	height: 600px;
+	width: 100%;
+}
+</style>
+</head>
+<body ng-app="predina">
+	<hr />
+	<div class="container" ng-controller="CoordinatesAndVehiclesController" data-ng-init="getCoordinatesAndVehicles()">
+
+		<div id="map"></div>
+		<hr />
+
+	</div>
+</body>
+<script type="text/javascript"
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkGl6mBhHA-OOxWRGa36B5-I1GO1O0gfc"></script>
+
+<script src="js/lib/angular.min.js"></script>
+<script src="js/lib/ui-bootstrap-tpls-2.5.0.min.js"></script>
+<script src="js/app/app.js"></script> 
+<script src="js/app/modules/ControllerModule.js"></script>
+<script src="js/app/modules/ServiceModule.js"></script>
+<script src="js/app/services/MapService.js"></script>
+<script src="js/app/services/CommonService.js"></script>
+<script src="js/app/services/CoordinatesService.js"></script>   
+<script src="js/app/services/VehicleLocationsService.js"></script>
+<script src="js/app//controllers/CoordinatesAndVehiclesController.js"></script>
+<link rel="stylesheet" href="css/lib/bootstrap.min.css" />
+<link rel="stylesheet" href="css/app/app.css" />
+</html>
