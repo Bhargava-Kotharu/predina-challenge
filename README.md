@@ -17,7 +17,7 @@ For File Operations - commons-io v2.6
 
 ## How to access the application ###
 
-For demo purpose this application is hosted in AWS Zone EU-WEST-2 in London Data Center.
+For demo purpose this application is hosted in my AWS account in Zone EU-WEST-2 London Data Center.
 
 To access the application, please access below urls:
 
