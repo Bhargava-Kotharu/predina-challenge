@@ -10,10 +10,10 @@ This README would normally document whatever steps are necessary to get your app
 
 ## External Libraries Used ###
 
-For CSV Parsing     - opencsv 4.0
-For API Docs        - springfox-swagger2 v2.8.0
-For API Docs UI     - springfox-swagger-ui v2.8.0
-For File Operations - commons-io v2.6
+For CSV Parsing     - opencsv 4.0 <br>
+For API Docs        - springfox-swagger2 v2.8.0 <br>
+For API Docs UI     - springfox-swagger-ui v2.8.0 <br>
+For File Operations - commons-io v2.6 <br>
 
 ## How to access the application ###
 
