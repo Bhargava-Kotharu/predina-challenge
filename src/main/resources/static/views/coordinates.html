@@ -3,34 +3,26 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Coordinates - Task 1</title>
-<style>
-#map {
-	height: 600px;
-	width: 100%;
-}
-</style>
 </head>
 <body ng-app="predina">
-	<hr /> 
+	<hr />
 	<div class="container" ng-controller="CoordinatesController"
 		data-ng-init="getCoordinates()">
-
+		<span id="errorMessage">{{errorMessage}}</span>
 		<div id="map"></div>
 		<hr />
-
 	</div>
 </body>
 <script type="text/javascript"
 	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkGl6mBhHA-OOxWRGa36B5-I1GO1O0gfc"></script>
-
 <script src="js/lib/angular.min.js"></script>
 <script src="js/lib/ui-bootstrap-tpls-2.5.0.min.js"></script>
 <script src="js/app/app.js"></script>
 <script src="js/app/modules/ControllerModule.js"></script>
 <script src="js/app/modules/ServiceModule.js"></script>
 <script src="js/app/controllers/CoordinatesController.js"></script>
-<script src="js/app/services/CoordinatesService.js"></script> 
-<script src="js/app/services/MapService.js"></script>  
+<script src="js/app/services/CoordinatesService.js"></script>
+<script src="js/app/services/MapService.js"></script>
 <link rel="stylesheet" href="css/lib/bootstrap.min.css" />
 <link rel="stylesheet" href="css/app/app.css" />
 </html>

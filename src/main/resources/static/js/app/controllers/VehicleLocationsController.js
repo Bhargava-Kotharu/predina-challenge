@@ -7,8 +7,7 @@ angular.module('predina.controllers').controller("VehicleLocationsController", [
 				$scope.executeService(true);
 		} 
 			
-		 //Timer start for every minute.
-		 $scope.StartTimer = function () { 
+		 $scope.vehicleLocationsTimer = function () { 
 		      $scope.Timer = $interval(function () { 
 		    	  $scope.executeService(false);
 		      }, 60000);
@@ -17,15 +16,18 @@ angular.module('predina.controllers').controller("VehicleLocationsController", [
 		$scope.executeService = function(startTimer){
 			  VechicleLocationsService.getVehicleLocations(CommonService.calculateTime()).then(function(value) {
 					$scope.vehiclesLocation= value.data;
+					if($scope.vehiclesLocation.length == 0){
+						$scope.errorMessage = "Server returned empty response. There might be no data for the time " + CommonService.calculateTime() + " in realtimelocations.csv"
+					}
 					MapService.loadMap($scope, $scope.vehiclesLocation, 8); 
 					MapService.markCoordinates($scope, $scope.vehiclesLocation, false, true);
 					if(startTimer)
-						$scope.StartTimer(); 
+						$scope.vehicleLocationsTimer(); 
 				}, function(reason) {
-					console.log("Error Occured retrieving Vehicle Locations.");
-		}, function(value) {
-			console.log("No Call back defined");
-			});
+					$scope.errorMessage = "Error retrieving vehicle locations."; 
+				}, function(value) {
+					$scope.errorMessage = "No Call back defined";
+				});
 }
 
 } ]);

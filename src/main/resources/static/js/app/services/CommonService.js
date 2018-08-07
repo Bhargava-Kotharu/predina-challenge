@@ -6,9 +6,9 @@ angular.module('predina.services').service('CommonService',
 			 
 			service.calculateTime = function(){
 			  	var date = new Date();
-				var hour = (date.getHours() < 12) ? date.getHours() : date.getHours() - 12;
+				var hour = (date.getHours() < 12) ? date.getHours() : date.getHours();
 				var minute = (date.getMinutes()<10?'0':'') + date.getMinutes();
-				var time = hour+5 + ':' + minute;  
+				var time = hour + ':' + minute;  
 				return time;
 			};
 			

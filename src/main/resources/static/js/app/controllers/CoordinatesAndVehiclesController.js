@@ -10,38 +10,45 @@ angular.module('predina.controllers').controller("CoordinatesAndVehiclesControll
 					MapService.markCoordinates($scope, $scope.vehiclesLocation, false);
 					 
 					CoordinatesService.getCoordinates().then(function(value) {
-						$scope.coordinates= value.data;
-						alert('ss');
-						MapService.markCoordinates($scope, $scope.coordinates, true);
-						$scope.StartTimer();
+					$scope.coordinates= value.data;
+					MapService.markCoordinates($scope, $scope.coordinates, true);
+					$scope.vehileLocationsTimer();
+					$scope.coordinatesTimer();
 					}, function(reason) {
-						console.log("Error retrieving Coordinates.");
+						$scope.errorMessage = "Error retrieving Coordinates."; 
 					}, function(value) {
-						console.log("No Call back defined");
+						$scope.errorMessage = "No Call back defined";
 					}); 
 					
 					$scope.StartTimer(); 
 				}, function(reason) {
-					console.log("Error Occured retrieving Vehicle Locations.");
+					$scope.errorMessage = "Error retrieving vehicle locations."; 
 				}, function(value) {
-					console.log("No Call back defined");
+					$scope.errorMessage = "No Call back defined";
 				});
 
 			}
 			
-		 //Timer start for every minute.
-		  $scope.StartTimer = function () { 
+		  
+		  $scope.vehileLocationsTimer = function () { 
 		      $scope.Timer = $interval(function () { 
 		    	  VechicleLocationsService.getCarCoordinates(CommonService.calculateTime()).then(function(value) {
 						$scope.vehiclesLocation= value.data; 
 						VechicleLocationsService.deleteAllMarkers();
 						VechicleLocationsService.markCoordinates($scope, $scope.vehiclesLocation);
 					}, function(reason) {
-						console.log("Error Occured retrieving Vehicle Locations.");
+						$scope.errorMessage = "Error retrieving vehicle locations."; 
 					}, function(value) {
-						console.log("No Call back defined");
+						$scope.errorMessage = "No Call back defined";
 					});
 		      }, 60000);
 		  }; 
+		   
+		 $scope.coordinatesTimer = function ( ) { 
+		      $scope.Timer = $interval(function () {
+		    	  MapService.markCoordinates($scope, $scope.coordinates, true, true);
+		    	  MapService.markCoordinates($scope, $scope.vehiclesLocation, false, false);
+		      }, 1000);
+		  };
 
 } ]);

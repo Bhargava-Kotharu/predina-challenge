@@ -7,7 +7,7 @@ package com.predina.app.constants;
  */
 public interface Constants {
 
-    String COORDINATES_FILE_PATH = "classpath:data/coordinates.csv";
-    String VEHICLE_LOCATIONS_FILE_PATH = "classpath:data/realtimelocation.csv";
+    String COORDINATES_FILE_PATH = "/data/coordinates.csv";
+    String VEHICLE_LOCATIONS_FILE_PATH = "/data/realtimelocation.csv";
     String CLASSPATH_KEY = "classpath:";
 }

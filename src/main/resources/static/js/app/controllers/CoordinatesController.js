@@ -3,23 +3,23 @@
 angular.module('predina.controllers').controller("CoordinatesController", [ "$scope", "$interval", "CoordinatesService", "MapService",
 		function($scope, $interval, CoordinatesService, MapService) {
 			
-			//Get Coordinates
+			// Get Coordinates
 			$scope.getCoordinates = function() {
 				CoordinatesService.getCoordinates().then(function(value) {
 					$scope.coordinates= value.data;
 					MapService.loadMap($scope, $scope.coordinates, 12);
 					MapService.markCoordinates($scope, $scope.coordinates, true, true);
-					$scope.StartTimer();
+					$scope.coordinatesTimer();
 				}, function(reason) {
-					console.log("Error retrieving Coordinates.");
+					$scope.errorMessage = "Error retrieving Coordinates."; 
 				}, function(value) {
-					console.log("No Call back defined");
+					$scope.errorMessage = "No Call back defined";
 				});
 
 			}
 			
-			//Timer start function.
-			 $scope.StartTimer = function ( ) { 
+			// Timer start function.
+			 $scope.coordinatesTimer = function ( ) { 
 			      $scope.Timer = $interval(function () {
 			    	  MapService.markCoordinates($scope, $scope.coordinates, true, true);
 			      }, 1000);
