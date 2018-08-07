@@ -5,8 +5,8 @@ This README would normally document whatever steps are necessary to get your app
 ## Technologies Used ###
 
 * Java 8
-* Spring Boot v2.0.1.RELEASE
-* Angular JS v2.0
+* Spring Boot
+* Angular JS
 
 ## External Libraries Used ###
 
@@ -23,15 +23,15 @@ To access the application, please access below urls:
 
 ### Application URLs ###
 
-Task - 1: http://predina-challenge.ap-southeast-1.elasticbeanstalk.com/coordinates
-Task - 2: http://predina-challenge.ap-southeast-1.elasticbeanstalk.com/vehicleLocations
-Task - 3: http://predina-challenge.ap-southeast-1.elasticbeanstalk.com/coordinatesAndVehicles
+Task - 1: http://predina-challenge.ap-southeast-1.elasticbeanstalk.com/coordinates <br>
+Task - 2: http://predina-challenge.ap-southeast-1.elasticbeanstalk.com/vehicleLocations <br>
+Task - 3: http://predina-challenge.ap-southeast-1.elasticbeanstalk.com/coordinatesAndVehicles <br>
 
 ### REST API Endpoints ###
 
-Task - 1: http://predina-challenge.ap-southeast-1.elasticbeanstalk.com/api/v1/coordinates
-Task - 2: http://predina-challenge.ap-southeast-1.elasticbeanstalk.com/api/v1/vehicleLocations
-Task - 3: http://predina-challenge.ap-southeast-1.elasticbeanstalk.com/api/v1/coordinatesAndVehicles
+Task - 1: http://predina-challenge.ap-southeast-1.elasticbeanstalk.com/api/v1/coordinates <br>
+Task - 2: http://predina-challenge.ap-southeast-1.elasticbeanstalk.com/api/v1/vehicleLocations <br>
+Task - 3: http://predina-challenge.ap-southeast-1.elasticbeanstalk.com/api/v1/coordinatesAndVehicles <br>
 
 ### API Documentation (Swagger) URL ###
 
