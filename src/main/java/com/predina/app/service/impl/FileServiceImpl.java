@@ -1,5 +1,9 @@
 package com.predina.app.service.impl;
 
+import static com.predina.app.constants.Constants.CLASSPATH_KEY;
+import static com.predina.app.constants.Constants.COORDINATES_FILE_PATH;
+import static com.predina.app.constants.Constants.VEHICLE_LOCATIONS_FILE_PATH;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
@@ -10,8 +14,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.ResourceUtils;
 
 import com.predina.app.service.FileService;
-
-import static com.predina.app.constants.Constants.*;
 
 /**
  * File Service for reading files from classpath

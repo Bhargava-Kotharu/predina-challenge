@@ -46,7 +46,6 @@ public class VehicleLocationsController {
      */
     @GetMapping("/time/{time}")
     public List<VehicleLocation> getVehiclesLocationByTime(@PathVariable String time) throws IOException {
-	System.out.println("time is " + time);
 	return vehicleLocations.getVehiclesLocationByTime(time);
     }
 
