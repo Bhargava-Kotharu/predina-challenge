@@ -31,7 +31,7 @@ Task - 3: http://predina-challenge.ap-southeast-1.elasticbeanstalk.com/coordinat
 
 Task - 1: http://predina-challenge.ap-southeast-1.elasticbeanstalk.com/api/v1/coordinates <br>
 Task - 2: http://predina-challenge.ap-southeast-1.elasticbeanstalk.com/api/v1/vehicleLocations <br>
-Task - 3: http://predina-challenge.ap-southeast-1.elasticbeanstalk.com/api/v1/coordinatesAndVehicles <br>
+Task - 3: Task - 3: Both APIs from Task1 and Task2 are used. <br>
 
 ### API Documentation (Swagger) URL ###
 

@@ -35,8 +35,7 @@ angular.module('predina.services').service('MapService',
 			        var marker = new google.maps.Marker({
 			            position: myLatlng,
 			            map: $scope.Map,
-			            icon: "images/carIcon.png"
-			            //title: data.title
+			            icon: "images/car-icon.png"
 			        });
 			        
 			        if(calculateSeverity){
